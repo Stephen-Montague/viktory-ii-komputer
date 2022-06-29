@@ -1,7 +1,6 @@
 
 
 body {
-  background-color: #3A76A6;
   background-color: #2d5a7e;
 }
 
@@ -87,9 +86,4 @@ footer {
   color: #63b3f4;
   margin: auto;
   width: 80%;
-
-
-  color: hsla(211,100%,70%, 0.75)
-
-
 }
