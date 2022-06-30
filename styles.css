@@ -6,8 +6,8 @@ body {
 
 header img {
   border-radius: 20%;
-  height: 10%; /* clamp(96, 10%, 384); */
-  width: 13%; /* clamp(128px, 13%, 512); */
+  height: 10%; 
+  width: 13%; 
   float: left;
   margin-left: 1.2%; 
   margin-right: 2%;
@@ -31,7 +31,7 @@ header nav ul li {
   header nav ul, header nav ul li {
     clear:left;
     margin-top: 5%
-  }
+  }  
 }
 
 header a{
@@ -69,6 +69,11 @@ main a:visited {
   color: #662182;
 }
 
+.columns {
+  display: grid;
+  grid-template-columns: 40% 60%;	
+}
+
 section ul li {
   color: #cfd067;
   list-style: none;
@@ -80,6 +85,14 @@ section a{
 
 section a:visited {
   color: #662182;
+}
+
+#compScore{
+  display: inline;
+}
+
+#userScore{
+  display: inline;
 }
 
 footer {
