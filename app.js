@@ -144,3 +144,41 @@ let isPlayingGame = confirmUserConsent();
 if (isPlayingGame){
     playGame();
 }
+
+// Lab 8 Below
+
+
+// Source: https://www.javascripttutorial.net/dom/manipulating/remove-all-child-nodes/
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+function displaySandMonster(){
+    console.log("Hello function...");
+    // let testImage = document.createElement("img");
+    // testImage.src = "SandMonster.png";
+    let testDiv = document.getElementById("lab8-loop-test");
+    removeAllChildNodes(testDiv);
+
+    let numberToDisplay = document.getElementById('numSandMonsters').value;
+    if (numberToDisplay === null){
+        return;
+    } else{
+        numberToDisplay = parseInt(numberToDisplay);
+        console.log("Input Number to diplay: " + numberToDisplay);
+        for (let i = 0; i < numberToDisplay; i++){
+
+            let testImage = document.createElement("img");
+            testImage.src = "SandMonster.png";
+
+            testDiv.appendChild(testImage);
+            console.log("The value of i : " + i);
+        }
+    }
+}
+
+document.getElementById('numSandMonsters').addEventListener('input', displaySandMonster);
+
