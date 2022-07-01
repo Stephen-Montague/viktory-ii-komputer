@@ -11,31 +11,46 @@ function confirmUserConsent(){
 }
 
 function getRockPaperScissorsInput(){
-    userInput = prompt("I'm thinking of one of the following:\n\
+    const userInput = prompt("I'm thinking of one of the following:\n\
     1. Rock\n\
     2. Paper\n\
     3. Scissors\n\
 I'll tell you my choice after you tell me yours. (Enter 1, 2, or 3.)\n\
 Don't worry - I never cheat.");
-    return parseInt(userInput);
+    let isValidGameInput = validateGameInput(userInput);
+    if (isValidGameInput){
+        return parseInt(userInput);       
+    } else{
+        if (userInput === null){  // Clicking "Cancel" returns null.
+            return userInput;
+        }
+        alert("Sorry, I didn't quite get that - Press OK to try again.");
+        return getRockPaperScissorsInput();
+    }
+}
+
+function validateGameInput(input){
+    parsedInput = parseInt(input);
+    if (parsedInput === 1 || parsedInput === 2 || parsedInput === 3){       
+        return true;
+     } else{
+        return false;
+     }
 }
 
 function getdialogueMsg(){
     // There's only one confirmation message now, so just return this. 
-    return "This is a 'Confirm' popup.\n\
-If you'd like to play a quick game of Rock, Paper, Scissors:\n\
+    return "If you'd like to play a quick game of Rock, Paper, Scissors:\n\
 Please press OK, or press Cancel to go to my site.";
 }
 
 function decideGameResult(computerAction, userAction){
-    // Returns string "win" "lose" "draw" or "noResult".
+    // Returns string "win" "lose" "draw" or "quit".
     // Parameters should have values 1, 2, 3 for Rock, Paper, Scissors.
-    console.log("User action: " + userAction)
 
-
-    // Invalid input returns "noResult".
-    if (userAction !== 1 && userAction !== 2 && userAction !== 3){       
-        return "noResult";
+    // If user clicks Cancel, return "quit".
+    if (userAction === null) {       
+        return "quit";
      }
 
     // Handle draw
@@ -99,8 +114,7 @@ function playGame(){
             "It's a tie!");
             break;
         default:
-            alert("I didn't quite understand your choice.\n" + 
-            "Maybe we'll play later.")
+            alert("Maybe we'll play later.")
             break;
    }
 }
