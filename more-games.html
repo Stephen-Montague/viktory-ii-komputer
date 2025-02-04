@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Viktory II Komputer</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <h3><ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li> || </li>
+                    <li><a href="/more-games.html">More&nbsp;Games</a></li>
+                    <li> || </li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul></h3>               
+            </nav>
+        </header>
+
+        <main>
+            <h1>Going&nbsp;Home</h1>
+            <figure>
+                <a href="https://stephen-montague.itch.io/going-home" target="_blank" rel="noopener noreferrer"><img class="image" src="GoingHome-b.png" alt="Screenshot of Going Home" width="320" height="240"></a>
+                <figcaption><a href="https://stephen-montague.itch.io/going-home" target="_blank" rel="noopener noreferrer">Going Home</a></figcaption>
+            </figure>
+            <P> <strong>  
+            </strong></P>             
+        </main>
+
+        <footer>
+            <p><strong>&copy; Stephen&nbsp;Montague
+            <div class="dm tooltip tooltiptext"><span class="tooltiptext">Copy&nbsp;to&nbsp;clipboard.</span></div> 
+        </footer>
+        <script>
+            let dm = document.querySelector(".dm");
+            let prefix = window.getComputedStyle(dm,':before')['content'].replace(/['"]+/g, '');
+            let suffix = window.getComputedStyle(dm,':after')['content'].replace(/['"]+/g, '');
+            let address = prefix + suffix;
+            dm.onclick = function(){
+                console.log("Copied: " + address );
+                let textarea = document.createElement('textarea');
+                textarea.setAttribute('type', 'hidden');
+                textarea.textContent = address;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            };
+        </script>
+    </body>
+ </html>   
+
+
+
+
+
+
