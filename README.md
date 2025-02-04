@@ -1,2 +1,4 @@
-# disasters-in-game-dev
-Project to record indie game failures and works in progress that may never succeed: until they do.
+# Viktory II Komputer & Game Portfolio
+Quick initial site links to my special Chrome Extension for the board game Viktory II on GamesByEmail and provides game sound credits. 
+
+Work in progress.
